@@ -29,14 +29,28 @@
       </div>
       <div class="col-md-4 mb-3">
         <label class="form-label fw-semibold text-uppercase small">Country</label>
-        <input v-model="store.company.country" class="form-control" type="text" />
+        <select v-model="store.company.country" class="form-select brand-input">
+          <option disabled value="">Select country</option>
+          <option v-for="(name, code) in countries" :key="code" :value="name">
+            {{ name }}
+          </option>
+        </select>
       </div>
     </div>
 
     <div class="row">
       <div class="col-md-6 mb-3">
         <label class="form-label fw-semibold text-uppercase small">Year Established</label>
-        <input v-model="store.company.year_established" class="form-control" type="number" />
+        <input
+          v-model.number="store.company.year_established"
+          class="form-control"
+          type="number"
+          :min="1900"
+          :max="currentYear"
+          @input="store.company.year_established = store.company.year_established.toString().slice(0, 4)"
+          @blur="validateYear"
+          placeholder="Enter Year"
+        />
       </div>
       <div class="col-md-6 mb-3">
         <label class="form-label fw-semibold text-uppercase small">Website</label>
@@ -57,13 +71,35 @@
 </template>
 
 <script setup>
-import { ref } from 'vue';
+import { ref, onMounted } from 'vue';
+import axios from 'axios';
 import { useRegistrationStore } from '../store/registration';
 const store = useRegistrationStore();
 const errors = ref([]);
+const countries = ref({});
+const currentYear = new Date().getFullYear();
+
+// Fetch countries from the Laravel API
+onMounted(async () => {
+  try {
+    const res = await axios.get('/api/countries');
+    countries.value = res.data;
+  } catch (err) {
+    console.error('Failed to fetch countries', err);
+  }
+});
 
 function handleFileUpload(event) {
   store.company.brochure = event.target.files[0];
+}
+
+// Restrict year in real-time
+function validateYear() {
+  if (store.company.year_established < 1900) {
+    store.company.year_established = null;
+  } else if (store.company.year_established > currentYear) {
+    store.company.year_established = currentYear;
+  }
 }
 
 function nextStep() {
@@ -75,7 +111,10 @@ function nextStep() {
   if (!store.company.country) errors.value.push('Country is required.');
   if (!store.company.year_established)
     errors.value.push('Year established is required.');
-  else if (store.company.year_established < 1900)
+  else if (
+    store.company.year_established < 1900 ||
+    store.company.year_established > currentYear
+  )
     errors.value.push('Invalid year.');
 
   if (errors.value.length === 0) {
