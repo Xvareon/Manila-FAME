@@ -26,8 +26,8 @@ A multi-step user registration system for the Manila FAME event, developed as a 
 - Download the msi installer to automatically set up the PATH of node for npm installations
 
 ## Clone the Repository
+- Go to C:\laragon\www (or where you have installed laragon). Open a terminal there and clone the repository:
 ```
-# Go to C:\laragon\www (or where you have installed laragon). Open a terminal there and clone the repository:
 git clone https://github.com/Xvareon/Manila-FAME.git
 ```
 
@@ -72,6 +72,9 @@ npm install bootstrap-icons
 # Start dev server
 npm run dev
 ```
+
+# The localhost link for the website (This may vary based on your ports):
+http://127.0.0.1:8000/
 
 What the website should look like:
 <img width="1911" height="912" alt="image" src="https://github.com/user-attachments/assets/d5608120-3cd6-4497-b485-e33c6ea6a5e0" />
