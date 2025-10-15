@@ -72,3 +72,17 @@ npm install bootstrap-icons
 # Start dev server
 npm run dev
 ```
+
+What the website should look like:
+<img width="1911" height="912" alt="image" src="https://github.com/user-attachments/assets/d5608120-3cd6-4497-b485-e33c6ea6a5e0" />
+<img width="1919" height="904" alt="image" src="https://github.com/user-attachments/assets/19f37426-b44b-449b-bf46-f34aa57b4dc8" />
+<img width="1919" height="883" alt="image" src="https://github.com/user-attachments/assets/626c8971-9ba7-4188-be23-1e31ea4076fa" />
+<img width="1919" height="622" alt="image" src="https://github.com/user-attachments/assets/d2f84703-4d19-41a3-b3d7-7e6c7eabac93" />
+<img width="1919" height="910" alt="image" src="https://github.com/user-attachments/assets/a025b46b-bb8e-4059-868a-d061c9792f3b" />
+<img width="1919" height="904" alt="image" src="https://github.com/user-attachments/assets/a5af0374-2f27-44da-ba4d-0597b2963fb2" />
+<img width="1919" height="907" alt="image" src="https://github.com/user-attachments/assets/60dd4f71-1f5e-4d7b-a613-6c280ef4a82a" />
+<img width="1919" height="907" alt="image" src="https://github.com/user-attachments/assets/bdd16e56-9c30-4041-a053-12d5ad880890" />
+
+
+
+
