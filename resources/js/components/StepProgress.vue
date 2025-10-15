@@ -46,7 +46,7 @@ const stepTitles = [
   width: 40px;
   height: 40px;
   border-radius: 50%;
-  background-color: #e0e0e0;
+  background-color: var(--mf-white);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -54,7 +54,7 @@ const stepTitles = [
   transition: 0.3s;
 }
 .circle.active {
-  background-color: #0d6efd;
-  color: white;
+  background-color: var(--mf-gold);
+  color: black;
 }
 </style>

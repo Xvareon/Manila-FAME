@@ -7,6 +7,6 @@
   @vite('resources/js/main.js')
 </head>
 <body>
-  <div id="app"></div>
+  <div id="app" style="background-color: var(--mf-sand); min-height: 100vh;"></div>
 </body>
 </html>
